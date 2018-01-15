@@ -30,8 +30,8 @@ public class RVActivity extends AppCompatActivity {
         mAdapter.setOnItemClick(new BaseRVAdapter.OnItemClick() {
             @Override
             public void onClick(int pos) {
-                mAdapter.addBean(pos,"新增");
-                mAdapter.notifyDataSetChanged();
+                mAdapter.removeBean(pos);
+                mRv.notifyItemRemoved(mAdapter.getListData(),pos);
             }
         });
     }
